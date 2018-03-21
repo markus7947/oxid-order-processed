@@ -24,3 +24,4 @@ Diese befindet sich in Bearbeitung und wir informieren Sie in einer gesonderten 
 _______________________________________________________________________________________________________________________
 
 Danach den Inhalt aus dem "copy_this" Ordner in das root Verzeichnis des Shops kopieren und das Modul aktivieren.
+Der Betreff der "In Bearbeitung" E-mail lässt sich unter "Stammdaten->Grundeinstellungen" ändern.
