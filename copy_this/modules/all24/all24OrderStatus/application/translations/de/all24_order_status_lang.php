@@ -8,7 +8,7 @@ $aLang = array(
     'charset'                                                   => 'UTF-8',
 
     // Lang-Strings
-    'PROCESSED'                                     => 'In Bearbeitung!',
+    'PROCESSED'                                 => 'In Bearbeitung!',
 	'DD_ORDERPROCESSED_HEADING'					=> 'Bearbeitung von Bestellung: ',
    
 );
