@@ -36,6 +36,9 @@ $aModule = array(
 			array('template'=> 'page/account/order.tpl',
 				'block'=> 'account_order_history',
 				'file' => '/application/views/tpl/page/account/all24_order.tpl'),
+			array('template'=> 'shop_main.tpl',
+				'block'=> 'admin_shop_main_emailsubject',
+				'file' => '/application/views/admin/all24_shop_main.tpl'),
 			
     
     )

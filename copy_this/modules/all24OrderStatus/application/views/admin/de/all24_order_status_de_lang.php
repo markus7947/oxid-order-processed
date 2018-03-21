@@ -34,6 +34,7 @@ $aLang = array(
 	'GENERAL_SETBACKPROCESSEDTIME'							=> 'Bearbeitungsdatum zurücksetzen',
 	'GENERAL_PROCESSEDON'									=> 'Bestellung bearbeitet : ',
 	'GENERAL_NOTPROCESSED'									=> 'Bestellung nicht bearbeitet',
+	'SHOP_MAIN_PROCESSED_NOW_SUBJECT'						=> 'E-Mail-Betreff "In Bearbeitung',
 
 );
 
