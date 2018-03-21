@@ -5,10 +5,12 @@ informieren wenn seine Bestellung bearbeitet wird.
 
 INSTALLATION:
 
-In der Datenbank muss die Tabelle "oxorder" erweitert werden (im Oxid Backend unter "Service - Tools - Sql ausführen"):
+In der Datenbank müssen die Tabellen "oxorder" und "oxshops" erweitert werden (im Oxid Backend unter "Service - Tools - Sql ausführen"):
 
 _______________________________________________________________________________________________________________________
 ALTER TABLE oxorder ADD OXPROCESSEDDATE DATETIME NOT NULL DEFAULT ‘0000-00-00 00:00:00’ AFTER OXSENDDATE
+
+ALTER TABLE  `oxshops` ADD  `oxprocsubj` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER  `OXSENDEDNOWSUBJECT`
 _______________________________________________________________________________________________________________________
 
 und es muss eine CMS-Seite mit der IDENT “oxorderprocessedemail” erstellt werden in der z.B. das stehen kann:
