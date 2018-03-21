@@ -16,18 +16,18 @@ $aModule = array(
     'author'       => 'Markus Koller',
     'email'        => '',
     'extend'       => array(
-			'order_overview' => 'all24OrderStatus/application/controllers/admin/all24_order_overview',
-			'oxemail' => 'all24OrderStatus/core/all24_oxemail'
+			'order_overview' => 'all24/all24OrderStatus/application/controllers/admin/all24_order_overview',
+			'oxemail' => 'all24/all24OrderStatus/core/all24_oxemail'
 			
     ),
     'files'        => array(
-			'all24orderoverview' =>'all24OrderStatus/application/controllers/admin/all24_order_overview.php',
-			'oxemail' => 'all24OrderStatus/core/all24_oxemail.php'
+			'all24orderoverview' =>'all24/all24OrderStatus/application/controllers/admin/all24_order_overview.php',
+			'oxemail' => 'all24/all24OrderStatus/core/all24_oxemail.php'
 
 	),
 	'templates' => array(
-    'processed_html.tpl' => 'all24OrderStatus/application/views/tpl/email/html/processed_html.tpl',
-	'processed_plain.tpl'=> 'all24OrderStatus/application/views/tpl/email/plain/processed_plain.tpl',
+    'processed_html.tpl' => 'all24/all24OrderStatus/application/views/tpl/email/html/processed_html.tpl',
+	'processed_plain.tpl'=> 'all24/all24OrderStatus/application/views/tpl/email/plain/processed_plain.tpl',
  ),
     'blocks'       => array(
 			array('template'=> 'order_overview.tpl',
