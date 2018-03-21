@@ -1,6 +1,4 @@
 # oxid-order-processed
-Erweitert Oxid Eshop um die Möglichkeit, den Kunden zu benachrichtigen wenn seine Bestellung bearbeitet wird.
-
 
 Das Modul erweitert das Backend unter "Bestellungen verwalten - Bestellungen" um die Möglichkeit den Kunden per E-mail zu
 informieren wenn seine Bestellung bearbeitet wird.
