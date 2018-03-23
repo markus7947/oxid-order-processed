@@ -4,9 +4,7 @@
  *
  * @author Markus Koller
  */
-
 $sMetadataVersion = '1.0';
-
 $aModule = array(
     'id'           => 'all24OrderStatus',
     'title'        => 'ALL24 OrderStatus',
@@ -23,7 +21,6 @@ $aModule = array(
     'files'        => array(
 			'all24orderoverview' =>'all24/all24OrderStatus/application/controllers/admin/all24_order_overview.php',
 			'oxemail' => 'all24/all24OrderStatus/core/all24_oxemail.php'
-
 	),
 	'templates' => array(
     'processed_html.tpl' => 'all24/all24OrderStatus/application/views/tpl/email/html/processed_html.tpl',
@@ -36,6 +33,9 @@ $aModule = array(
 			array('template'=> 'page/account/order.tpl',
 				'block'=> 'account_order_history',
 				'file' => '/application/views/tpl/page/account/all24_order.tpl'),
+			array('template'=> 'shop_main.tpl',
+				'block'=> 'admin_shop_main_emailsubject',
+				'file' => '/application/views/admin/all24_shop_main.tpl'),
 			
     
     )
