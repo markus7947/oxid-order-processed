@@ -1,27 +1,31 @@
 # oxid-order-processed
 
-Das Modul erweitert das Backend unter "Bestellungen verwalten - Bestellungen" um die Möglichkeit den Kunden per E-mail zu
-informieren wenn seine Bestellung bearbeitet wird.
+[German below]
 
-INSTALLATION:
+## Description
 
-In der Datenbank müssen die Tabellen "oxorder" und "oxshops" erweitert werden (im Oxid Backend unter "Service - Tools - Sql ausführen"):
+This module extends OXID eShop administration panel at _"Administer orders" -> "Orders"_ with the possibility to send a message to clients if his order is processed.
 
-_______________________________________________________________________________________________________________________
-ALTER TABLE oxorder ADD OXPROCESSEDDATE DATETIME NOT NULL DEFAULT ‘0000-00-00 00:00:00’ AFTER OXSENDDATE
+## Installation
 
-ALTER TABLE  `oxshops` ADD  `oxprocsubj` VARCHAR( 255 ) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER  `OXSENDEDNOWSUBJECT`
-_______________________________________________________________________________________________________________________
+1. Extend the table _"oxorder"_ in the database with the following SQL statement (OXID admin panel -> _Services -> Tools -> SQL_):
+`ALTER TABLE oxorder ADD OXPROCESSEDDATE DATETIME NOT NULL DEFAULT ‘0000-00-00 00:00:00’ AFTER OXSENDDATE`
+2. Generate a CMS page with the IDENT _“oxorderprocessedemail”_ with the following content (example):
+`Hello, [{ $order->oxorder__oxbillsal->value|oxmultilangsal }] [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }],</br>Thanks for your order!
+</br>Your purchase is about to be proceeded, and we'll inform you with a seperate e-mail, once the shipment left our stock.`
+3. Copy the content of the folder _"copy_this"_ into the document root of your shop and activate the module via the admin panel.
 
-und es muss eine CMS-Seite mit der IDENT “oxorderprocessedemail” erstellt werden in der z.B. das stehen kann:
+-----
 
-_______________________________________________________________________________________________________________________
-Guten Tag, [{ $order->oxorder__oxbillsal->value|oxmultilangsal }] [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }],
-</br>
-Wir danken für Ihre Bestellung.
-</br>
-Diese befindet sich in Bearbeitung und wir informieren Sie in einer gesonderten Mail, sobald sie unser Lager verlassen hat.
-_______________________________________________________________________________________________________________________
+## Beschreibung
 
-Danach den Inhalt aus dem "copy_this" Ordner in das root Verzeichnis des Shops kopieren und das Modul aktivieren.
-Der Betreff der "In Bearbeitung" E-mail lässt sich unter "Stammdaten->Grundeinstellungen" ändern.
+Das Modul erweitert den OXID eShop - Admininstrationsbereich unter _"Bestellungen verwalten -> Bestellungen"_ um die Möglichkeit, den Kunden per E-Mail zu
+informieren, wenn seine Bestellung bearbeitet wird.
+
+## Installation
+
+1. In der Datenbank muss die Tabelle _"oxorder"_ erweitert werden (im OXID Administrationsbereich unter _"Service -> Tools -> Sql ausführen"_):
+`ALTER TABLE oxorder ADD OXPROCESSEDDATE DATETIME NOT NULL DEFAULT ‘0000-00-00 00:00:00’ AFTER OXSENDDATE`
+2. Erstelle eine CMS-Seite mit der IDENT _“oxorderprocessedemail”_ mit z.B. folgendem Inhalt:  
+`Guten Tag, [{ $order->oxorder__oxbillsal->value|oxmultilangsal }] [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }],</br>Wir danken für Ihre Bestellung.</br>Diese befindet sich in Bearbeitung, und wir informieren Sie in einer gesonderten E-Mail, sobald sie unser Lager verlassen hat.`
+3. Kopiere den Inhalt aus dem Ordner _"copy_this"_ in das root-Verzeichnis des Shops und aktiviere das Modul über den Admin-Bereich.
