@@ -15,7 +15,7 @@ ALTER TABLE `oxshops` ADD `OXPROCESSEDSUBJECT` VARCHAR(255) NOT NULL DEFAULT 'Yo
 3. Generate a CMS page with the IDENT _“oxorderprocessedemail”_ with the following content (example):
 `Hello, [{ $order->oxorder__oxbillsal->value|oxmultilangsal }] [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }],</br>Thanks for your order!
 </br>Your purchase is about to be proceeded, and we'll inform you with a seperate e-mail, once the shipment left our stock.`
-3. Copy the content of the folder _"copy_this"_ into the document root of your shop and activate the module via the admin panel.
+4. Copy the content of the folder _"copy_this"_ into the document root of your shop and activate the module via the admin panel.
 
 -----
 
@@ -28,9 +28,10 @@ informieren, wenn seine Bestellung bearbeitet wird.
 
 1. In der Datenbank muss die Tabelle _"oxorder"_ erweitert werden (im OXID Administrationsbereich unter _"Service -> Tools -> Sql ausführen"_):
 ALTER TABLE `oxorder` ADD `OXPROCESSEDDATE` DATETIME NOT NULL DEFAULT '0000-00-00 00:00:00' AFTER `OXSENDDATE`;
-In der Datenbank muss die Tabelle _"oxshops"_ erweitert werden (im OXID Administrationsbereich unter _"Service -> Tools -> Sql ausführen"_):
+
+2. In der Datenbank muss die Tabelle _"oxshops"_ erweitert werden (im OXID Administrationsbereich unter _"Service -> Tools -> Sql ausführen"_):
 ALTER TABLE `oxshops` ADD `OXPROCESSEDSUBJECT` VARCHAR(255) NOT NULL DEFAULT 'Ihre Bestellung wird bearbeitet' AFTER `OXSENDEDNOWSUBJECT`;
 
-2. Erstelle eine CMS-Seite mit der IDENT _“oxorderprocessedemail”_ mit z.B. folgendem Inhalt:  
+3. Erstelle eine CMS-Seite mit der IDENT _“oxorderprocessedemail”_ mit z.B. folgendem Inhalt:  
 `Guten Tag, [{ $order->oxorder__oxbillsal->value|oxmultilangsal }] [{ $order->oxorder__oxbillfname->value }] [{ $order->oxorder__oxbilllname->value }],</br>Wir danken für Ihre Bestellung.</br>Diese befindet sich in Bearbeitung, und wir informieren Sie in einer gesonderten E-Mail, sobald sie unser Lager verlassen hat.`
-3. Kopiere den Inhalt aus dem Ordner _"copy_this"_ in das root-Verzeichnis des Shops und aktiviere das Modul über den Admin-Bereich.
+4. Kopiere den Inhalt aus dem Ordner _"copy_this"_ in das root-Verzeichnis des Shops und aktiviere das Modul über den Admin-Bereich.
